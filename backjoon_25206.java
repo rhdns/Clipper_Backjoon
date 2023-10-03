@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 class backjoon_25206 {
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-        double result = 0, credit_sum = 0; // result = 학점*과목평균, credit_sum = 학점의 총합
+        double result = 0, credit_sum = 0; // result = 학점*과목평균, credit_sum = 학점 총합
         char c;
 
         for(int i=0;i<20;i++) {
             double credit = 0;
             double grade = 0;
 
-            String str_arr[] = sc.nextLine().split(" ");
-            credit += Double.parseDouble(str_arr[1]);
+            String str_arr[] = scan.nextLine().split(" ");// 공백 기준으로 단어를 나눔
+            credit += Double.parseDouble(str_arr[1]);//문자열을 double형태로 바꿔줌
             c = str_arr[2].charAt(0);
 
             switch(c) {
@@ -45,7 +45,6 @@ class backjoon_25206 {
             credit_sum += credit;
             result += credit*grade;
         }
-        sc.close();
 
         System.out.println(result/credit_sum);
     }
